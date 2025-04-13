@@ -1,6 +1,10 @@
 # Use an official Node.js runtime as the base image
 FROM node:23-slim
 
+# Install curl using apt-get
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -21,4 +25,4 @@ EXPOSE 3000
 
 # Start the app using a lightweight HTTP server
 RUN npm install -g serve
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["serve", "-s", "dist", "-l", "3000"]

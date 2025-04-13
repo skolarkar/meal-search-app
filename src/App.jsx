@@ -14,7 +14,9 @@ function App() {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/meals'); // Replace with your API URL
+        const protocol = window.location.protocol === 'https:' ? 'http:' : 'http:';
+        const apiUrl = `${protocol}//app:8080/api/meals`;
+        const response = await fetch(apiUrl); // Replace with your API URL
         const data = await response.json();
         setDishes(data); // Update dishes state with API data
         setLoading(false); // Set loading to false
@@ -53,7 +55,7 @@ function App() {
         {/* Add Image */}
         <div className="flex justify-center mb-4">
           <img
-            src="http://localhost:8080/images/img1.jpg" // Replace with your image URL
+            src="http://app:8080/images/img1.jpg" // Replace with your image URL
             alt="Meals"
             className="w-24 h-24 rounded-full shadow-lg"
           />
