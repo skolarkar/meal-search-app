@@ -12,7 +12,10 @@ function App() {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/meals'); // Replace with your API URL
+        const response = await fetch('http://app:8080/api/meals',{
+          method: 'GET',
+          mode: 'no-cors',
+        }) // Replace with your API URL
         const data = await response.json();
         setDishes(data); // Update dishes state with API data
         setLoading(false); // Set loading to false
