@@ -14,9 +14,11 @@ function App() {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
+
         const protocol = window.location.protocol === 'https:' ? 'http:' : 'http:';
         const apiUrl = `${protocol}//localhost:8080/api/meals`;
         const response = await fetch(apiUrl); // Replace with your API URL
+
         const data = await response.json();
         setDishes(data); // Update dishes state with API data
         setLoading(false); // Set loading to false
