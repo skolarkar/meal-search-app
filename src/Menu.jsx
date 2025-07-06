@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/Menu.jsx
 import "./Menu.css";
-=======
-import "./App.css";
->>>>>>> 6cc6542b633fece8a7df710006411a0267d0a9d6:src/App.jsx
 import MealCard from "./MealCard";
 import Cart from "./Cart";
 import { useState, useEffect } from "react";
