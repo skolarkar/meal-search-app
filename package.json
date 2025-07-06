@@ -4,12 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "main": "src/main.jsx",
-"scripts": {
-    "dev": "vite",
+  "scripts": {
+    "dev": "vite --port 3000",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
-
   },
   "dependencies": {
     "@fontsource/dancing-script": "^5.2.5",

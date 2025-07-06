@@ -1,9 +1,9 @@
-import './App.css';
-import MealCard from './MealCard';
-import Cart from './Cart';
-import { useState, useEffect } from 'react';
+import "./App.css";
+import MealCard from "./MealCard";
+import Cart from "./Cart";
+import { useState, useEffect } from "react";
 // Import the Pacifico font
-import '@fontsource/pacifico';
+import "@fontsource/pacifico";
 
 function App() {
   const [dishes, setDishes] = useState([]); // State to store dishes
@@ -14,8 +14,8 @@ function App() {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-
-        const protocol = window.location.protocol === 'https:' ? 'http:' : 'http:';
+        const protocol =
+          window.location.protocol === "https:" ? "http:" : "http:";
         const apiUrl = `${protocol}//localhost:8080/api/meals`;
         const response = await fetch(apiUrl); // Replace with your API URL
 
@@ -23,7 +23,7 @@ function App() {
         setDishes(data); // Update dishes state with API data
         setLoading(false); // Set loading to false
       } catch (error) {
-        console.error('Error fetching dishes:', error);
+        console.error("Error fetching dishes:", error);
         setLoading(false); // Set loading to false even if there's an error
       }
     };
@@ -34,7 +34,7 @@ function App() {
   // Add item to cart
   const handleAddToCart = (item) => {
     setCart((prevCart) => [...prevCart, item]);
-    console.log('Added to cart:', item); // Debug log
+    console.log("Added to cart:", item); // Debug log
   };
 
   // Function to remove an item from the cart
@@ -44,16 +44,26 @@ function App() {
 
   // Calculate total price
   const calculateTotal = () => {
-    return cart.reduce((total, item) => {
-      const price = parseFloat(String(item.price).replace('$', '')) || 0;
+    const subtotal = cart.reduce((total, item) => {
+      const price = parseFloat(String(item.price).replace("$", "")) || 0;
       return total + price;
-    }, 0).toFixed(2);
+    }, 0);
+
+    return addTaxes(subtotal).toFixed(2);
+  };
+
+  // Add taxes to the total
+  const addTaxes = (subtotal) => {
+    const tax = (subtotal * 2) / 100; // 2% tax
+    return subtotal + tax;
   };
 
   return (
     <div className="bg-gray-100 min-h-screen flex">
       {/* Main Content */}
-      <div className="flex-1 p-6 pr-20"> {/* Added pr-20 for padding-right */}
+      <div className="flex-1 p-6 pr-20">
+        {" "}
+        {/* Added pr-20 for padding-right */}
         {/* Add Image */}
         <div className="flex justify-center mb-4">
           <img
@@ -62,11 +72,10 @@ function App() {
             className="w-24 h-24 rounded-full shadow-lg"
           />
         </div>
-
         {/* Title */}
         <h1
           className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-500 text-center mb-6 shadow-md border-amber-700 border-4 rounded-lg p-4"
-          style={{ fontFamily: 'Pacifico, cursive' }}
+          style={{ fontFamily: "Pacifico, cursive" }}
         >
           Bharat Lunch
         </h1>
@@ -88,7 +97,11 @@ function App() {
       </div>
 
       {/* Cart Section */}
-      <Cart cart={cart} calculateTotal={calculateTotal} onRemoveFromCart={handleRemoveFromCart} />
+      <Cart
+        cart={cart}
+        calculateTotal={calculateTotal}
+        onRemoveFromCart={handleRemoveFromCart}
+      />
     </div>
   );
 }
