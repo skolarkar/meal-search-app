@@ -1,4 +1,8 @@
+<<<<<<< HEAD:src/Menu.jsx
 import "./Menu.css";
+=======
+import "./App.css";
+>>>>>>> 6cc6542b633fece8a7df710006411a0267d0a9d6:src/App.jsx
 import MealCard from "./MealCard";
 import Cart from "./Cart";
 import { useState, useEffect } from "react";
@@ -42,6 +46,22 @@ function Menu() {
     setCart((prevCart) => prevCart.filter((_, i) => i !== index));
   };
 
+  // Calculate total price
+  const calculateTotal = () => {
+    const subtotal = cart.reduce((total, item) => {
+      const price = parseFloat(String(item.price).replace("$", "")) || 0;
+      return total + price;
+    }, 0);
+
+    return addTaxes(subtotal).toFixed(2);
+  };
+
+  // Add taxes to the total
+  const addTaxes = (subtotal) => {
+    const tax = (subtotal * 2) / 100; // 2% tax
+    return subtotal + tax;
+  };
+
   return (
     <div className="flex">
       {/* Main Content */}
@@ -81,7 +101,15 @@ function Menu() {
       </div>
 
       {/* Cart Section */}
+<<<<<<< HEAD:src/Menu.jsx
       <Cart cart={cart} onRemoveFromCart={handleRemoveFromCart} />
+=======
+      <Cart
+        cart={cart}
+        calculateTotal={calculateTotal}
+        onRemoveFromCart={handleRemoveFromCart}
+      />
+>>>>>>> 6cc6542b633fece8a7df710006411a0267d0a9d6:src/App.jsx
     </div>
   );
 }
