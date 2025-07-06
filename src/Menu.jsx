@@ -97,15 +97,7 @@ function Menu() {
       </div>
 
       {/* Cart Section */}
-<<<<<<< HEAD:src/Menu.jsx
       <Cart cart={cart} onRemoveFromCart={handleRemoveFromCart} />
-=======
-      <Cart
-        cart={cart}
-        calculateTotal={calculateTotal}
-        onRemoveFromCart={handleRemoveFromCart}
-      />
->>>>>>> 6cc6542b633fece8a7df710006411a0267d0a9d6:src/App.jsx
     </div>
   );
 }
