@@ -59,7 +59,7 @@ function Menu() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex" style={{ backgroundColor: "#1e1b4b" }}>
       {/* Main Content */}
       <div className="flex-1 p-6 pr-20">
         {" "}
@@ -74,8 +74,8 @@ function Menu() {
         </div>
         {/* Title */}
         <h1
-          className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-500 text-center mb-6 shadow-md border-amber-700 border-4 rounded-lg p-4"
-          style={{ fontFamily: "Pacifico, cursive" }}
+          className="text-4xl font-bold font-shadow-2xl text-amber-500 text-center mb-6 shadow-lg "
+          style={{ fontFamily: "Copperplate, Papyrus, fantasy" }}
         >
           Menu
         </h1>

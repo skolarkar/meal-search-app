@@ -10,15 +10,17 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-amber-600 to-blue-900 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo/Brand */}
           <div className="flex items-center">
             <Link
               to="/"
-              className="text-2xl font-bold text-white hover:text-yellow-300 transition-colors"
-              style={{ fontFamily: "Pacifico, cursive" }}
+              className="text-5xl font-bold text-yellow-300 text-shadow-lg hover:text-yellow-600 transition-colors"
+              style={{
+                fontFamily: "Copperplate, Papyrus, fantasy",
+              }}
             >
               🍽️ Bharat Lunch
             </Link>
