@@ -3,8 +3,8 @@ import React from "react";
 
 function About() {
   return (
-    <div className="flex" style={{ backgroundColor: "#1e1b4b" }}>
-      <div className="flex-1 p-6 pr-20">
+    <div className="flex min-h-screen" style={{ backgroundColor: "#1e1b4b" }}>
+      <div className="flex-1 p-6 pr-10">
         {" "}
         {/* Added pr-20 for padding-right */}
         {/* Add Image */}

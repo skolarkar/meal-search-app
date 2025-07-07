@@ -69,7 +69,7 @@ function Menu() {
           <img
             src="http://localhost:8080/images/img1.jpg" // Replace with your image URL
             alt="Meals"
-            className="w-24 h-24 rounded-full shadow-lg"
+            className="w-20 h-20 rounded-full shadow-lg"
           />
         </div>
         {/* Title */}
@@ -82,7 +82,7 @@ function Menu() {
         {loading ? (
           <p className="text-center text-gray-600">Loading...</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-6 gap-3">
             {dishes.map((dish, index) => (
               <MealCard
                 key={index}

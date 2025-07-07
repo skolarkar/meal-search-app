@@ -6,13 +6,13 @@ function Layout() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 min-h-0">
         <Outlet />
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-8 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Footer - Always visible at bottom */}
+      <footer className="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-4 mt-auto sticky bottom-0 z-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
             <div>

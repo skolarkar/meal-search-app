@@ -32,8 +32,8 @@ function Navbar() {
               to="/"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive("/")
-                  ? "bg-blue-700 text-yellow-300"
-                  : "text-white hover:bg-blue-700 hover:text-yellow-300"
+                  ? "bg-yellow-300 text-blue-900 border border-yellow-300"
+                  : "text-white hover:bg-blue-700 hover:text-yellow-300 border border-yellow-300"
               }`}
             >
               About
@@ -42,8 +42,8 @@ function Navbar() {
               to="/menu"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive("/menu")
-                  ? "bg-blue-700 text-yellow-300"
-                  : "text-white hover:bg-blue-700 hover:text-yellow-300"
+                  ? "bg-yellow-300 text-blue-900 border border-yellow-300"
+                  : "text-white hover:bg-blue-700 hover:text-yellow-300 border border-yellow-300"
               }`}
             >
               Menu
@@ -52,11 +52,21 @@ function Navbar() {
               to="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive("/contact")
-                  ? "bg-blue-700 text-yellow-300"
-                  : "text-white hover:bg-blue-700 hover:text-yellow-300"
+                  ? "bg-yellow-300 text-blue-900 border border-yellow-300"
+                  : "text-white hover:bg-blue-700 hover:text-yellow-300 border border-yellow-300"
               }`}
             >
               Contact
+            </Link>
+            <Link
+              to="/signin"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/signin")
+                  ? "bg-yellow-300 text-blue-900 border border-yellow-300"
+                  : "text-white hover:bg-blue-700 hover:text-yellow-300 border border-yellow-300"
+              }`}
+            >
+              Sign in
             </Link>
           </div>
         </div>
