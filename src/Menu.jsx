@@ -59,7 +59,7 @@ function Menu() {
   };
 
   return (
-    <div className="flex" style={{ backgroundColor: "#1e1b4b" }}>
+    <div className="flex min-h-screen" style={{ backgroundColor: "#1e1b4b" }}>
       {/* Main Content */}
       <div className="flex-1 p-6 pr-20">
         {" "}
