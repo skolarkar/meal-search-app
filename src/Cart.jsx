@@ -100,7 +100,7 @@ function Cart({ cart, onRemoveFromCart }) {
                         <span>${calculateSubtotal().toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between text-sm font-bold text-blue-700">
-                        <span>Tax (5%):</span>
+                        <span>Taxes (5%):</span>
                         <span>${calculateTax().toFixed(2)}</span>
                       </div>
                       <div className="border-t pt-1 mt-1">
