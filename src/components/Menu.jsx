@@ -1,6 +1,6 @@
-import "./Menu.css";
-import MealCard from "./MealCard";
-import Cart from "./Cart";
+import "../Menu.css";
+import MealCard from "./MealCard.jsx";
+import Cart from "./Cart.tsx";
 import { useState, useEffect } from "react";
 // Import the Pacifico font
 import "@fontsource/pacifico";
@@ -20,10 +20,33 @@ function Menu() {
         const response = await fetch(apiUrl); // Replace with your API URL
 
         const data = await response.json();
+        console.log("Fetched dishes data:", data); // Debug log
         setDishes(data); // Update dishes state with API data
         setLoading(false); // Set loading to false
       } catch (error) {
         console.error("Error fetching dishes:", error);
+        // Use mock data if API fails
+        const mockData = [
+          {
+            imageUrl:
+              "https://via.placeholder.com/400x300/FF6B6B/FFFFFF?text=Pasta",
+            description: "Spaghetti Carbonara",
+            price: "$12.99",
+          },
+          {
+            imageUrl:
+              "https://via.placeholder.com/400x300/4ECDC4/FFFFFF?text=Pizza",
+            description: "Margherita Pizza",
+            price: "$15.99",
+          },
+          {
+            imageUrl:
+              "https://via.placeholder.com/400x300/45B7D1/FFFFFF?text=Burger",
+            description: "Classic Cheeseburger",
+            price: "$9.99",
+          },
+        ];
+        setDishes(mockData);
         setLoading(false); // Set loading to false even if there's an error
       }
     };
